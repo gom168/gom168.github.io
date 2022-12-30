@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>2018-Cohesive Subgraph Computation over Large Sparse Graphs</title>
+    <link href="/2022/12/30/2018-Cohesive-Subgraph-Computation-over-Large-Sparse-Graphs/"/>
+    <url>/2022/12/30/2018-Cohesive-Subgraph-Computation-over-Large-Sparse-Graphs/</url>
+    
+    <content type="html"><![CDATA[<p>本文是对该书的内容进行简单整理，全文过长，详细内容在PPT内，其中对各个章节的核心内容和算法将在下方进行简单说明分类。</p><p>第一章：</p><p>基础知识介绍：包括图的基本术语，相应数据集；以及相应的图算法的综述</p><p>第二章：</p><p>数据结构的介绍，皆为用来存储对应图结构的：</p><ol><li><p>Linked List-Based Linear Heap</p><p><img src="/images/image-20221230093928389.png" alt="image-20221230093928389"></p><p>其基本结构很简单，主要是用了双向链表的结构</p><p>•<strong>heads</strong>：the heads of doubly linked lists</p><p>•**pres **and <strong>nexts</strong>: the information of doubly linked lists</p><p>•<strong>keys:</strong> the key values of all elements</p></li></ol><p>​    <img src="/images/image-20221230094449746.png" alt="image-20221230094449746"></p><p>​    对应支持的操作如上所示</p><ol start="2"><li> Array-based Linear Heap</li></ol><p>   <img src="/images/image-20221230094557259.png" alt="image-20221230094557259"></p><p>   其转换成为数组的结构了，可以理解为按照key_value来排序的，有点像桶排序的感觉</p><p>   •<strong>ids</strong>: all elements with the same key value are stored consecutively in an array ids</p><p>   •<strong>heads</strong>: the start position of the elements for each distinct key value is stored in heads</p><p>   •<strong>keys:</strong> the key values of all elements</p><p>   •<strong>rids</strong>: the position of elements in ids are stored in an array rids (i.e., rids[ids[<em>i</em>]]=<em>i</em>).</p><p>   <img src="/images/image-20221230095112297.png" alt="image-20221230095112297"></p><p>   对应支持的操作如上</p><ol start="3"><li> LazyLinearHeap</li></ol><p>   相比较前面的链表结构，其主要是改成了单向的链表，且在维护元素更改时，会用懒标记</p><p>​    <img src="/images/image-20221230095030201.png" alt="image-20221230095030201"></p><p>第三章</p><p>主要是围绕着k-core的相关内容</p><ol><li><p>首先是k-core的定义部分：</p><p>定义部分包括：</p><p>1） k-core，如下图</p><p><img src="/images/image-20221230095308106.png" alt="image-20221230095308106"></p><p>2）顶点的core number，这也是通常k-core维护中维护的内容</p><p>3）degenerarcy   $\delta(G)$：表示的是G中每个子图每个顶点的度最多为k</p><p>4） arboricity  $\alpha(G)$: 表示的是G被分为最少的边不交的生成树的个数</p></li><li><p>k-core计算：</p><p>1）Peel 算法：本质是逐步剥离当前core值最小的顶点，对应会根据剥离顺序得到 degeneracy ordering   </p><p>2）k-core计算：找到对应的子图</p><p>和peel算法类似，无非是将对应的子图进行了存储</p><p>3）Core Hierarchy Tree：</p><p>定义时，增加了连通k-core的定义，这样使得层次树中含有连通性信息，建立时需要用到并查集的结构</p><p><img src="/images/image-20221230095903173.png" alt="image-20221230095903173"></p><p>当前针对于这个问题，已经存在了动态的维护方法，对应的分布式算法也有提出。</p><p>4）Core Spanning Tree:</p><p><img src="/images/image-20221230100135458.png" alt="image-20221230100135458"></p><p>$G_w$生成方式是参考最大生成树来的，其中每一条连通边的权值$w(u,v)$被定义为 $min{core(u),core(v)}$</p><p>该问题意义：</p><p>①同时保留了k-core信息和对应的连通性信息，我们想提取最大的连通k-core时，只要保留最大的core值相连的边即可</p><p>②其可以用来做密度的近似，同样是用上面的办法，只保留最大的core，但是其中最后一个顶点需要重复加一遍前面的core值，然后最后将累计的权值除二再除以顶点数</p><p><img src="/images/image-20221230103640850.png" alt="image-20221230103640850"></p></li><li><p>其他情况下的k-core分解</p><p>1） An h-index-based Local Algorithm</p><p>定义了一个h-index ，然后基于这个定义来分解k-core</p><p>2）I/O- Efficient Core Decomposition</p><p>基于IO加速的分解，其实就是一边读写一边做操作，少了一些邻居信息</p></li></ol><p>第四章 最密子图计算</p><ol><li><p>定义部分：</p><p>$\rho(g)= \frac{|E(g)|}{|V(g)|}= \frac{d_{avg}(g)}{2}$</p><p>问题通常分为近似问题和精确问题</p></li><li><p>近似问题：</p><p>1）2-Approximation 算法</p><p>直接按照degenerarcy ordering 剥离即可</p><p>2） A straming $2(1+\epsilon)$- Approxiamtion 算法</p><p>利用当前度来计算，每次剥离 $d(v)&lt;= 2*(1+\epsilon) * \rho(S)$ 的顶点</p><p>3） 精确算法：</p><p>密度测试——利用网络流+二分的算法，合理建图来判断密度区间</p></li></ol><p>第五章 高层结构的核分解</p><ol><li><p>3-clique(三角形分解)：</p><p><img src="/images/image-20221230105417004.png" alt="image-20221230105417004"></p><p>本质很像暴力枚举，就是枚举顶点v，然后枚举v的邻居w，再枚举w的邻居u来判断是否和v相连</p><p>TriE Algorithm：</p><p>和上面算法很像，区别就是换了枚举v的次序，并且将原图变成了有向图</p></li><li><p>k-clique 枚举算法：</p><p>本质和前面一样啊，就是dfs多了几轮</p><p><img src="/images/image-20221230105745179.png" alt="image-20221230105745179"></p><p>k-clique-oriented: 则是基于了TriE的一个改进</p></li><li><p>k-truss：</p><p>k-truss是基于边来定义的，其定义了每条边的supp支持度，也就是其参与构成三角形的个数</p><p>然后k-truss则是一个子图中每条边都能参与构成至少k-2个三角形</p><p>性质：</p><p>1）每个k-truss都是（k-1）truss的子图</p><p>2） 每个k-truss都是（k+1) core 的子图</p><p>对应有每个边的truss number 的定义：表明的是含有该边的最大的k-truss</p><p>计算方式：</p><p>PeelTruss：</p><p><img src="/images/image-20221230110758635.png" alt="image-20221230110758635"></p><p>剥离过程中涉及到三角形的计算，肯定复杂度要大于peelcore</p></li><li><p>s-clique support: r-clique中含有s-clique的数量</p><p>对应的s-clique connected ： 两个r-clique都被含在s-clique中包含对应的clique</p><p> k-（r,s)-nucleaus 的定义：</p><p>1） 任意r-clique 其s-clique的support 一定大于等于k</p><p>2） 任意的两个r-clique在s-clique中一定是连通的</p><p><img src="/images/image-20221230111712569.png" alt="image-20221230111712569"></p></li></ol><p>​        计算：也是用的peelNucleus</p><p>​        <img src="/images/image-20221230111815277.png" alt="image-20221230111815277"></p><ol start="5"><li><p>k-clique density</p><p>$\rho_k(g) = \frac{c_k(g)}{|V(g)|}, c_k(g)是g中k-cliques的数量$ </p><p>其计算密度对应也是近似算法和精确算法</p></li></ol><p>第六章 边连通性分解</p><ol><li><p>K-ECC 删除任意k-1条边以后仍然连通</p><p><img src="/images/image-20221230112307094.png" alt="image-20221230112307094"></p><p>计算方式KECC：</p><p><img src="/images/image-20221230112912147.png" alt="image-20221230112912147"></p><p>这里面重点为如何分割</p><p>1） 两路分割：</p><p><img src="/images/image-20221230113030056.png" alt="image-20221230113030056"></p><p>其中计算最小割是通过下面的构造</p><p><img src="/images/image-20221230113208285.png" alt="image-20221230113208285"></p><p><img src="/images/image-20221230113242959.png" alt="image-20221230113242959"></p><p>2） 多路分割</p><p><img src="/images/image-20221230113341352.png" alt="image-20221230113341352"></p><p><img src="/images/image-20221230113354418.png" alt="image-20221230113354418"></p></li></ol><div class="row">    <embed src="/pdf/20221005.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>图论</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>cohesive graphs</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2021-Hierarchical Core Maintenance on Large Dynamic Graphs</title>
     <link href="/2022/12/28/2021-Hierarchical-Core-Maintenance-on-Large-Dynamic-Graphs/"/>
     <url>/2022/12/28/2021-Hierarchical-Core-Maintenance-on-Large-Dynamic-Graphs/</url>
