@@ -16,44 +16,36 @@
   <meta name="author" content="gx7">
   <meta name="keywords" content="">
   
-    <meta name="description" content="本文是对该书的内容进行简单整理，全文过长，详细内容在PPT内，其中对各个章节的核心内容和算法将在下方进行简单说明分类。 第一章： 基础知识介绍：包括图的基本术语，相应数据集；以及相应的图算法的综述 第二章： 数据结构的介绍，皆为用来存储对应图结构的：  Linked List-Based Linear Heap  其基本结构很简单，主要是用了双向链表的结构 •heads：the heads of">
+    <meta name="description" content="这篇论文是围绕k-VCC的求解 一、Abstract部分： 1）研究问题：给定k，求出图中的所有K-VCC 2）k-VCC特性：高耦合、高鲁棒性、子图重叠性 3） 方法：  ① 证明了分割问题的上界——可以用多项式时间来进行解决问题 ② 提出了两个优化策略：neighbor sweep 和 group sweep  4）结果： ​    在大型数据集上证明了方法的高效">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2018-Cohesive Subgraph Computation over Large Sparse Graphs">
-<meta property="og:url" content="http://example.com/2022/12/30/2018-Cohesive-Subgraph-Computation-over-Large-Sparse-Graphs/index.html">
+<meta property="og:title" content="2019-Enumerating k-Vertex Connected Components in Large Graphs">
+<meta property="og:url" content="http://example.com/2022/12/30/2019-Enumerating-k-Vertex-Connected-Components-in-Large-Graphs/index.html">
 <meta property="og:site_name" content="拐小七">
-<meta property="og:description" content="本文是对该书的内容进行简单整理，全文过长，详细内容在PPT内，其中对各个章节的核心内容和算法将在下方进行简单说明分类。 第一章： 基础知识介绍：包括图的基本术语，相应数据集；以及相应的图算法的综述 第二章： 数据结构的介绍，皆为用来存储对应图结构的：  Linked List-Based Linear Heap  其基本结构很简单，主要是用了双向链表的结构 •heads：the heads of">
+<meta property="og:description" content="这篇论文是围绕k-VCC的求解 一、Abstract部分： 1）研究问题：给定k，求出图中的所有K-VCC 2）k-VCC特性：高耦合、高鲁棒性、子图重叠性 3） 方法：  ① 证明了分割问题的上界——可以用多项式时间来进行解决问题 ② 提出了两个优化策略：neighbor sweep 和 group sweep  4）结果： ​    在大型数据集上证明了方法的高效">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/images/image-20221230093928389.png">
-<meta property="og:image" content="http://example.com/images/image-20221230094449746.png">
-<meta property="og:image" content="http://example.com/images/image-20221230094557259.png">
-<meta property="og:image" content="http://example.com/images/image-20221230095112297.png">
-<meta property="og:image" content="http://example.com/images/image-20221230095030201.png">
-<meta property="og:image" content="http://example.com/images/image-20221230095308106.png">
-<meta property="og:image" content="http://example.com/images/image-20221230095903173.png">
-<meta property="og:image" content="http://example.com/images/image-20221230100135458.png">
-<meta property="og:image" content="http://example.com/images/image-20221230103640850.png">
-<meta property="og:image" content="http://example.com/images/image-20221230105417004.png">
-<meta property="og:image" content="http://example.com/images/image-20221230105745179.png">
-<meta property="og:image" content="http://example.com/images/image-20221230110758635.png">
-<meta property="og:image" content="http://example.com/images/image-20221230111712569.png">
-<meta property="og:image" content="http://example.com/images/image-20221230111815277.png">
-<meta property="og:image" content="http://example.com/images/image-20221230112307094.png">
-<meta property="og:image" content="http://example.com/images/image-20221230112912147.png">
-<meta property="og:image" content="http://example.com/images/image-20221230113030056.png">
-<meta property="og:image" content="http://example.com/images/image-20221230113208285.png">
-<meta property="og:image" content="http://example.com/images/image-20221230113242959.png">
-<meta property="og:image" content="http://example.com/images/image-20221230113341352.png">
-<meta property="og:image" content="http://example.com/images/image-20221230113354418.png">
-<meta property="article:published_time" content="2022-12-30T01:34:37.000Z">
-<meta property="article:modified_time" content="2022-12-30T03:40:41.750Z">
+<meta property="og:image" content="http://example.com/images/image-20221230191332813.png">
+<meta property="og:image" content="http://example.com/images/image-20221230194735795.png">
+<meta property="og:image" content="http://example.com/images/image-20221230194755050.png">
+<meta property="og:image" content="http://example.com/images/image-20221230194007930.png">
+<meta property="og:image" content="c:/Users/Lenovo/AppData/Roaming/Typora/typora-user-images/image-20221230192156538.png">
+<meta property="og:image" content="http://example.com/images/image-20221230194918361.png">
+<meta property="og:image" content="http://example.com/images/image-20221230195504193.png">
+<meta property="og:image" content="http://example.com/imagesimage-20221231154307216.png">
+<meta property="og:image" content="http://example.com/images/image-20221231154236084.png">
+<meta property="og:image" content="http://example.com/images/image-20221231154516085.png">
+<meta property="og:image" content="http://example.com/images/image-20221231154819629.png">
+<meta property="og:image" content="http://example.com/images/image-20221231155050998.png">
+<meta property="og:image" content="http://example.com/images/image-20221231155106047.png">
+<meta property="article:published_time" content="2022-12-30T10:55:12.000Z">
+<meta property="article:modified_time" content="2022-12-31T07:51:32.733Z">
 <meta property="article:author" content="gx7">
-<meta property="article:tag" content="cohesive graphs">
+<meta property="article:tag" content="k-VCC">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/images/image-20221230093928389.png">
+<meta name="twitter:image" content="http://example.com/images/image-20221230191332813.png">
   
   
   
-  <title>2018-Cohesive Subgraph Computation over Large Sparse Graphs - 拐小七</title>
+  <title>2019-Enumerating k-Vertex Connected Components in Large Graphs - 拐小七</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -236,7 +228,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="2018-Cohesive Subgraph Computation over Large Sparse Graphs"></span>
+            <span id="subtitle" data-typed-text="2019-Enumerating k-Vertex Connected Components in Large Graphs"></span>
           
         </div>
 
@@ -247,8 +239,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-12-30 09:34" pubdate>
-          2022年12月30日 上午
+        <time datetime="2022-12-30 18:55" pubdate>
+          2022年12月30日 晚上
         </time>
       </span>
     
@@ -259,7 +251,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.5k 字
+          1.6k 字
         
       </span>
     
@@ -270,7 +262,7 @@
         
         
         
-          21 分钟
+          14 分钟
         
       </span>
     
@@ -308,158 +300,123 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">2018-Cohesive Subgraph Computation over Large Sparse Graphs</h1>
+            <h1 style="display: none">2019-Enumerating k-Vertex Connected Components in Large Graphs</h1>
             
             
               <div class="markdown-body">
                 
-                <p>本文是对该书的内容进行简单整理，全文过长，详细内容在PPT内，其中对各个章节的核心内容和算法将在下方进行简单说明分类。</p>
-<p>第一章：</p>
-<p>基础知识介绍：包括图的基本术语，相应数据集；以及相应的图算法的综述</p>
-<p>第二章：</p>
-<p>数据结构的介绍，皆为用来存储对应图结构的：</p>
-<ol>
-<li><p>Linked List-Based Linear Heap</p>
-<p><img src="/images/image-20221230093928389.png" srcset="/img/loading.gif" lazyload alt="image-20221230093928389"></p>
-<p>其基本结构很简单，主要是用了双向链表的结构</p>
-<p>•<strong>heads</strong>：the heads of doubly linked lists</p>
-<p>•<strong>pres and nexts</strong>: the information of doubly linked lists</p>
-<p>•<strong>keys:</strong> the key values of all elements</p>
-</li>
-</ol>
-<p>​    <img src="/images/image-20221230094449746.png" srcset="/img/loading.gif" lazyload alt="image-20221230094449746"></p>
-<p>​    对应支持的操作如上所示</p>
-<ol start="2">
-<li> Array-based Linear Heap</li>
-</ol>
-<p>   <img src="/images/image-20221230094557259.png" srcset="/img/loading.gif" lazyload alt="image-20221230094557259"></p>
-<p>   其转换成为数组的结构了，可以理解为按照key_value来排序的，有点像桶排序的感觉</p>
-<p>   •<strong>ids</strong>: all elements with the same key value are stored consecutively in an array ids</p>
-<p>   •<strong>heads</strong>: the start position of the elements for each distinct key value is stored in heads</p>
-<p>   •<strong>keys:</strong> the key values of all elements</p>
-<p>   •<strong>rids</strong>: the position of elements in ids are stored in an array rids (i.e., rids[ids[<em>i</em>]]=<em>i</em>).</p>
-<p>   <img src="/images/image-20221230095112297.png" srcset="/img/loading.gif" lazyload alt="image-20221230095112297"></p>
-<p>   对应支持的操作如上</p>
-<ol start="3">
-<li> LazyLinearHeap</li>
-</ol>
-<p>   相比较前面的链表结构，其主要是改成了单向的链表，且在维护元素更改时，会用懒标记</p>
-<p>​    <img src="/images/image-20221230095030201.png" srcset="/img/loading.gif" lazyload alt="image-20221230095030201"></p>
-<p>第三章</p>
-<p>主要是围绕着k-core的相关内容</p>
-<ol>
-<li><p>首先是k-core的定义部分：</p>
-<p>定义部分包括：</p>
-<p>1） k-core，如下图</p>
-<p><img src="/images/image-20221230095308106.png" srcset="/img/loading.gif" lazyload alt="image-20221230095308106"></p>
-<p>2）顶点的core number，这也是通常k-core维护中维护的内容</p>
-<p>3）degenerarcy   $\delta(G)$：表示的是G中每个子图每个顶点的度最多为k</p>
-<p>4） arboricity  $\alpha(G)$: 表示的是G被分为最少的边不交的生成树的个数</p>
-</li>
-<li><p>k-core计算：</p>
-<p>1）Peel 算法：本质是逐步剥离当前core值最小的顶点，对应会根据剥离顺序得到 degeneracy ordering   </p>
-<p>2）k-core计算：找到对应的子图</p>
-<p>和peel算法类似，无非是将对应的子图进行了存储</p>
-<p>3）Core Hierarchy Tree：</p>
-<p>定义时，增加了连通k-core的定义，这样使得层次树中含有连通性信息，建立时需要用到并查集的结构</p>
-<p><img src="/images/image-20221230095903173.png" srcset="/img/loading.gif" lazyload alt="image-20221230095903173"></p>
-<p>当前针对于这个问题，已经存在了动态的维护方法，对应的分布式算法也有提出。</p>
-<p>4）Core Spanning Tree:</p>
-<p><img src="/images/image-20221230100135458.png" srcset="/img/loading.gif" lazyload alt="image-20221230100135458"></p>
-<p>$G_w$生成方式是参考最大生成树来的，其中每一条连通边的权值$w(u,v)$被定义为 $min{core(u),core(v)}$</p>
-<p>该问题意义：</p>
-<p>①同时保留了k-core信息和对应的连通性信息，我们想提取最大的连通k-core时，只要保留最大的core值相连的边即可</p>
-<p>②其可以用来做密度的近似，同样是用上面的办法，只保留最大的core，但是其中最后一个顶点需要重复加一遍前面的core值，然后最后将累计的权值除二再除以顶点数</p>
-<p><img src="/images/image-20221230103640850.png" srcset="/img/loading.gif" lazyload alt="image-20221230103640850"></p>
-</li>
-<li><p>其他情况下的k-core分解</p>
-<p>1） An h-index-based Local Algorithm</p>
-<p>定义了一个h-index ，然后基于这个定义来分解k-core</p>
-<p>2）I/O- Efficient Core Decomposition</p>
-<p>基于IO加速的分解，其实就是一边读写一边做操作，少了一些邻居信息</p>
-</li>
-</ol>
-<p>第四章 最密子图计算</p>
-<ol>
-<li><p>定义部分：</p>
-<p>$\rho(g)= \frac{|E(g)|}{|V(g)|}= \frac{d_{avg}(g)}{2}$</p>
-<p>问题通常分为近似问题和精确问题</p>
-</li>
-<li><p>近似问题：</p>
-<p>1）2-Approximation 算法</p>
-<p>直接按照degenerarcy ordering 剥离即可</p>
-<p>2） A straming $2(1+\epsilon)$- Approxiamtion 算法</p>
-<p>利用当前度来计算，每次剥离 $d(v)&lt;= 2*(1+\epsilon) * \rho(S)$ 的顶点</p>
-<p>3） 精确算法：</p>
-<p>密度测试——利用网络流+二分的算法，合理建图来判断密度区间</p>
-</li>
-</ol>
-<p>第五章 高层结构的核分解</p>
-<ol>
-<li><p>3-clique(三角形分解)：</p>
-<p><img src="/images/image-20221230105417004.png" srcset="/img/loading.gif" lazyload alt="image-20221230105417004"></p>
-<p>本质很像暴力枚举，就是枚举顶点v，然后枚举v的邻居w，再枚举w的邻居u来判断是否和v相连</p>
-<p>TriE Algorithm：</p>
-<p>和上面算法很像，区别就是换了枚举v的次序，并且将原图变成了有向图</p>
-</li>
-<li><p>k-clique 枚举算法：</p>
-<p>本质和前面一样啊，就是dfs多了几轮</p>
-<p><img src="/images/image-20221230105745179.png" srcset="/img/loading.gif" lazyload alt="image-20221230105745179"></p>
-<p>k-clique-oriented: 则是基于了TriE的一个改进</p>
-</li>
-<li><p>k-truss：</p>
-<p>k-truss是基于边来定义的，其定义了每条边的supp支持度，也就是其参与构成三角形的个数</p>
-<p>然后k-truss则是一个子图中每条边都能参与构成至少k-2个三角形</p>
-<p>性质：</p>
-<p>1）每个k-truss都是（k-1）truss的子图</p>
-<p>2） 每个k-truss都是（k+1) core 的子图</p>
-<p>对应有每个边的truss number 的定义：表明的是含有该边的最大的k-truss</p>
-<p>计算方式：</p>
-<p>PeelTruss：</p>
-<p><img src="/images/image-20221230110758635.png" srcset="/img/loading.gif" lazyload alt="image-20221230110758635"></p>
-<p>剥离过程中涉及到三角形的计算，肯定复杂度要大于peelcore</p>
-</li>
-<li><p>s-clique support: r-clique中含有s-clique的数量</p>
-<p>对应的s-clique connected ： 两个r-clique都被含在s-clique中包含对应的clique</p>
-<p> k-（r,s)-nucleaus 的定义：</p>
-<p>1） 任意r-clique 其s-clique的support 一定大于等于k</p>
-<p>2） 任意的两个r-clique在s-clique中一定是连通的</p>
-<p><img src="/images/image-20221230111712569.png" srcset="/img/loading.gif" lazyload alt="image-20221230111712569"></p>
-</li>
-</ol>
-<p>​        计算：也是用的peelNucleus</p>
-<p>​        <img src="/images/image-20221230111815277.png" srcset="/img/loading.gif" lazyload alt="image-20221230111815277"></p>
-<ol start="5">
-<li><p>k-clique density</p>
-<p>$\rho_k(g) = \frac{c_k(g)}{|V(g)|}, c_k(g)是g中k-cliques的数量$ </p>
-<p>其计算密度对应也是近似算法和精确算法</p>
-</li>
-</ol>
-<p>第六章 边连通性分解</p>
-<ol>
-<li><p>K-ECC 删除任意k-1条边以后仍然连通</p>
-<p><img src="/images/image-20221230112307094.png" srcset="/img/loading.gif" lazyload alt="image-20221230112307094"></p>
-<p>计算方式KECC：</p>
-<p><img src="/images/image-20221230112912147.png" srcset="/img/loading.gif" lazyload alt="image-20221230112912147"></p>
-<p>这里面重点为如何分割</p>
-<p>1） 两路分割：</p>
-<p><img src="/images/image-20221230113030056.png" srcset="/img/loading.gif" lazyload alt="image-20221230113030056"></p>
-<p>其中计算最小割是通过下面的构造</p>
-<p><img src="/images/image-20221230113208285.png" srcset="/img/loading.gif" lazyload alt="image-20221230113208285"></p>
-<p><img src="/images/image-20221230113242959.png" srcset="/img/loading.gif" lazyload alt="image-20221230113242959"></p>
-<p>2） 多路分割</p>
-<p><img src="/images/image-20221230113341352.png" srcset="/img/loading.gif" lazyload alt="image-20221230113341352"></p>
-<p><img src="/images/image-20221230113354418.png" srcset="/img/loading.gif" lazyload alt="image-20221230113354418"></p>
-</li>
-</ol>
-
+                
 
 	<div class="row">
-    <embed src="/pdf/20221005.pdf" width="100%" height="550" type="application/pdf">
+    <embed src="/pdf/Enumerating" width="100%" height="550" type="application/pdf">
 	</div>
 
 
 
+
+<p>这篇论文是围绕k-VCC的求解</p>
+<p>一、Abstract部分：</p>
+<p>1）研究问题：给定k，求出图中的所有K-VCC</p>
+<p>2）k-VCC特性：高耦合、高鲁棒性、子图重叠性</p>
+<p>3） 方法： </p>
+<p>① 证明了分割问题的上界——可以用多项式时间来进行解决问题</p>
+<p>② 提出了两个优化策略：neighbor sweep 和 group sweep </p>
+<p>4）结果：</p>
+<p>​    在大型数据集上证明了方法的高效性</p>
+<p>​    有数量级的提升</p>
+<p>二、Introduction部分：</p>
+<ol>
+<li><p>k-VCC特性：</p>
+<p>1） G的顶点连通性不大于边连通性和最小度</p>
+<p>2） 直径较小</p>
+<p>3） 子图的重叠性不超过n/2，其中n为顶点数</p>
+</li>
+<li><p>问题和现有方法：</p>
+<p>1） 给定G和指定的k，求出所有的k-VCC</p>
+<p>2） 现有方法：</p>
+<p>递归的找到一个顶点小于k的顶点切割，并对图进行分区</p>
+<p>一个顶点对的最小割是他们之间顶点独立路径的数量</p>
+</li>
+<li><p>本文方法：</p>
+<p>1） 证明了k-VCC的数量不超过n/2 —— 因此可以用多项式时间来完成算法</p>
+<p>2） Neighbor Sweep: 对一些顶点进行属性划分；一旦其被测试或swept，则对其所有邻居sweep；为顶点存一个值，结束测试为其周围邻居增加值，超过阈值则sweep掉</p>
+<p>3） Group Sweep：将顶点划分为不相交的组，以组为单位进行上面的测试</p>
+</li>
+<li><p>贡献：</p>
+<p>（1）一个多项式时间的算法</p>
+<p>（2）两个有效的剪枝策略</p>
+<p>（3）在实际问题的有效性</p>
+</li>
+</ol>
+<p>三、前置知识</p>
+<ol>
+<li><p>定义1 ： 顶点连通性k(G): 为移除最小数量的顶点导致原图不相连或成为平凡图</p>
+</li>
+<li><p>定义2： k-vertex-connected: (1) |V(G)|&gt;k (2) 删除任意k-1个顶点后原图仍连通</p>
+</li>
+<li><p>定义3： k-vertex-connected-component </p>
+<p>(1) g是k-vertex-connected （2） g is maximal</p>
+</li>
+</ol>
+<p>四、分割的基础框架</p>
+<ol>
+<li><p>将原图分为t个连通块</p>
+</li>
+<li><p>对每个连通块都用GLOBAL-CUT来找点割集：</p>
+<p>1）若点割集为空，则连通块本身就是一个VCC</p>
+<p>2） 否则的话，kVCC将原图根据点割集分开，并将每一个分割后的子连通块再次递归调用KVCC-ENUM</p>
+</li>
+</ol>
+<p><img src="/images/image-20221230191332813.png" srcset="/img/loading.gif" lazyload alt="image-20221230191332813"></p>
+<p>五、Basic Solution</p>
+<ol>
+<li><p>顶点割集计算：</p>
+<p>Globla-cut的目的是计算出一个少于k个顶点的点割集</p>
+<p>1） 先做一个sparse certification 的优化：将G提取其只有O(k.n)条边的k-vertex-connected连通的子图</p>
+<p>2） 下面则分割根据u是否属于S(割集)进行分类讨论：</p>
+<p>4-6行为不属于的情况，7-10 为属于的情况</p>
+<p><img src="/images/image-20221230194735795.png" srcset="/img/loading.gif" lazyload alt="image-20221230194735795"></p>
+<p><img src="/images/image-20221230194755050.png" srcset="/img/loading.gif" lazyload alt="image-20221230194755050"></p>
+<p>具体需要结合上面的两个引理来进行理解，而LOC-Cut将原有的点拆点成为n+2m条边，2n个点的图，然后求u到v的最大流，即为其local connectivity</p>
+<p><img src="/images/image-20221230194007930.png" srcset="/img/loading.gif" lazyload alt="image-20221230194007930"></p>
+</li>
+</ol>
+<p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20221230192156538.png" srcset="/img/loading.gif" lazyload alt="image-20221230192156538"></p>
+<p>​        3） 整体时间度分析比较复杂：<img src="/images/image-20221230194918361.png" srcset="/img/loading.gif" lazyload alt="image-20221230194918361"></p>
+<p>六、搜索剪枝</p>
+<p>A. neighbor Sweep</p>
+<ol>
+<li>side-vertex: u不属于一个所含顶点小于k的割集S</li>
+<li>side-vertex u是可以传导k-vetex连通性的，进而减少了局部测试</li>
+</ol>
+<p><img src="/images/image-20221230195504193.png" srcset="/img/loading.gif" lazyload alt="image-20221230195504193"></p>
+<p>​    而其具体的求法则根据上面的定理得到</p>
+<ol start="3">
+<li><p>因为满足上面条件的为 strong-side-vertex，而这些点是可以传递k-vertex-connectivity，因此可以进行剪枝</p>
+</li>
+<li><p>其还可以利用Vertex Deposit进行维护</p>
+<p>1） 若v可以和u的k个邻居都有k-vertex-connected，u和v也是k-vertex-connected的</p>
+<p>2） 因此为每个顶点存一个deposit(v)，表示其邻居节点中满足1）的条件个数的点</p>
+</li>
+</ol>
+<p>B. Group Sweep</p>
+<ol>
+<li><p>首先是如何构造一个side-group</p>
+<p>side-group定义如下：</p>
+<p><img src="/imagesimage-20221231154307216.png" srcset="/img/loading.gif" lazyload alt="image-20221231154307216"></p>
+<p><img src="/images/image-20221231154236084.png" srcset="/img/loading.gif" lazyload alt="image-20221231154236084"></p>
+</li>
+<li><p>group sweep rule:</p>
+<p>side-group 可以有以下的作用：</p>
+<p>换句话就是group内一个side-vertex完成了测试，整个gorup的k-vertex-connected 性质就相同了</p>
+<p><img src="/images/image-20221231154516085.png" srcset="/img/loading.gif" lazyload alt="image-20221231154516085"></p>
+</li>
+</ol>
+<p>​        更一般的方法是，测试group里面是否有k个点均符合条件，并用deposit记录：</p>
+<p>​    <img src="/images/image-20221231154819629.png" srcset="/img/loading.gif" lazyload alt="image-20221231154819629"></p>
+<p>整体算法：</p>
+<p><img src="/images/image-20221231155050998.png" srcset="/img/loading.gif" lazyload alt="image-20221231155050998"></p>
+<p><img src="/images/image-20221231155106047.png" srcset="/img/loading.gif" lazyload alt="image-20221231155106047"></p>
 
                 
               </div>
@@ -481,6 +438,13 @@
   <a href="/categories/%E5%9B%BE%E8%AE%BA/" class="category-chain-item">图论</a>
   
   
+    <span>></span>
+    
+  <a href="/categories/%E5%9B%BE%E8%AE%BA/k-VCC/" class="category-chain-item">k-VCC</a>
+  
+  
+
+  
 
       </span>
     
@@ -493,7 +457,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/cohesive-graphs/">#cohesive graphs</a>
+        <a href="/tags/k-VCC/">#k-VCC</a>
       
     </div>
   
@@ -505,8 +469,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>2018-Cohesive Subgraph Computation over Large Sparse Graphs</div>
-      <div>http://example.com/2022/12/30/2018-Cohesive-Subgraph-Computation-over-Large-Sparse-Graphs/</div>
+      <div>2019-Enumerating k-Vertex Connected Components in Large Graphs</div>
+      <div>http://example.com/2022/12/30/2019-Enumerating-k-Vertex-Connected-Components-in-Large-Graphs/</div>
     </div>
     <div class="license-meta">
       
@@ -550,18 +514,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/12/30/2019-Enumerating-k-Vertex-Connected-Components-in-Large-Graphs/" title="2019-Enumerating k-Vertex Connected Components in Large Graphs">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">2019-Enumerating k-Vertex Connected Components in Large Graphs</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/12/28/2021-Hierarchical-Core-Maintenance-on-Large-Dynamic-Graphs/" title="2021-Hierarchical Core Maintenance on Large Dynamic Graphs">
-                        <span class="hidden-mobile">2021-Hierarchical Core Maintenance on Large Dynamic Graphs</span>
+                      <a href="/2022/12/30/2018-Cohesive-Subgraph-Computation-over-Large-Sparse-Graphs/" title="2018-Cohesive Subgraph Computation over Large Sparse Graphs">
+                        <span class="hidden-mobile">2018-Cohesive Subgraph Computation over Large Sparse Graphs</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
