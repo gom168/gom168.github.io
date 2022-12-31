@@ -16,22 +16,35 @@
   <meta name="author" content="gx7">
   <meta name="keywords" content="">
   
-    <meta name="description" content="研究问题：动态图中的k-truss维护 研究方法： 1） 其考虑了同时插入一个混合结构的情况，也就是可以支持多边插入和删除 2） 首先研究的是如何构建这个混合结构 3） 其次是对于这样的混合结构的插入和删除，如何进行有效的维护 下面是ppt讲解部分：   	      	       最后是补充一下原论文：">
+    <meta name="description" content="研究问题：动态超图的超核维护  定义部分： 1） 超图：一条边可以连接多个顶点    ​        2）超核：和k-core的定义是一样的，只不过引入到了超图汇总  研究思路： 1） 证明了单边插入和删除只会使得超核数量增加1或减少1 2） 为超边提出了核的定义，同时提出了precore的定义，但两者都是为了实际问题服务 3） 提出了支持度的定义  定义部分: 1） 顶点和边的超核数定义：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2022-Exploring Truss Maintenance in Fully Dynamic Graphs:A Mixed Structure Based Approach">
-<meta property="og:url" content="http://example.com/2022/12/31/2022-Exploring-Truss-Maintenance-in-Fully-Dynamic-Graphs-A-Mixed-Structure-Based-Approach/index.html">
+<meta property="og:title" content="2021-hypercore Maintenance in Dynamic Hypergraphs">
+<meta property="og:url" content="http://example.com/2022/12/31/2021-hypercore-Maintenance-in-Dynamic-Hypergraphs/index.html">
 <meta property="og:site_name" content="拐小七">
-<meta property="og:description" content="研究问题：动态图中的k-truss维护 研究方法： 1） 其考虑了同时插入一个混合结构的情况，也就是可以支持多边插入和删除 2） 首先研究的是如何构建这个混合结构 3） 其次是对于这样的混合结构的插入和删除，如何进行有效的维护 下面是ppt讲解部分：   	      	       最后是补充一下原论文：">
+<meta property="og:description" content="研究问题：动态超图的超核维护  定义部分： 1） 超图：一条边可以连接多个顶点    ​        2）超核：和k-core的定义是一样的，只不过引入到了超图汇总  研究思路： 1） 证明了单边插入和删除只会使得超核数量增加1或减少1 2） 为超边提出了核的定义，同时提出了precore的定义，但两者都是为了实际问题服务 3） 提出了支持度的定义  定义部分: 1） 顶点和边的超核数定义：">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-12-31T07:58:48.000Z">
-<meta property="article:modified_time" content="2022-12-31T08:08:17.728Z">
+<meta property="og:image" content="http://example.com/images/image-20221231162443509.png">
+<meta property="og:image" content="http://example.com/images/image-20221231162926475.png">
+<meta property="og:image" content="http://example.com/images/image-20221231163025758.png">
+<meta property="og:image" content="http://example.com/images/image-20221231163821567.png">
+<meta property="og:image" content="http://example.com/images/image-20221231163923474.png">
+<meta property="og:image" content="http://example.com/images/image-20221231164014778.png">
+<meta property="og:image" content="http://example.com/images/image-20221231164029161.png">
+<meta property="og:image" content="http://example.com/images/image-20221231164112483.png">
+<meta property="og:image" content="http://example.com/images/image-20221231164155657.png">
+<meta property="og:image" content="http://example.com/images/image-20221231164235955.png">
+<meta property="article:published_time" content="2022-12-31T08:16:51.000Z">
+<meta property="article:modified_time" content="2022-12-31T08:43:16.348Z">
 <meta property="article:author" content="gx7">
-<meta property="article:tag" content="k-truss">
+<meta property="article:tag" content="k-core">
+<meta property="article:tag" content="超图">
+<meta property="article:tag" content="动态图维护">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/images/image-20221231162443509.png">
   
   
   
-  <title>2022-Exploring Truss Maintenance in Fully Dynamic Graphs:A Mixed Structure Based Approach - 拐小七</title>
+  <title>2021-hypercore Maintenance in Dynamic Hypergraphs - 拐小七</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -214,7 +227,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="2022-Exploring Truss Maintenance in Fully Dynamic Graphs:A Mixed Structure Based Approach"></span>
+            <span id="subtitle" data-typed-text="2021-hypercore Maintenance in Dynamic Hypergraphs"></span>
           
         </div>
 
@@ -225,7 +238,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-12-31 15:58" pubdate>
+        <time datetime="2022-12-31 16:16" pubdate>
           2022年12月31日 下午
         </time>
       </span>
@@ -237,7 +250,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          128 字
+          752 字
         
       </span>
     
@@ -248,7 +261,7 @@
         
         
         
-          2 分钟
+          7 分钟
         
       </span>
     
@@ -286,21 +299,70 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">2022-Exploring Truss Maintenance in Fully Dynamic Graphs:A Mixed Structure Based Approach</h1>
+            <h1 style="display: none">2021-hypercore Maintenance in Dynamic Hypergraphs</h1>
             
             
               <div class="markdown-body">
                 
-                <p>研究问题：动态图中的k-truss维护</p>
-<p>研究方法：</p>
-<p>1） 其考虑了同时插入一个混合结构的情况，也就是可以支持多边插入和删除</p>
-<p>2） 首先研究的是如何构建这个混合结构</p>
-<p>3） 其次是对于这样的混合结构的插入和删除，如何进行有效的维护</p>
-<p>下面是ppt讲解部分：</p>
+                <p>研究问题：动态超图的超核维护</p>
+<ol>
+<li><p>定义部分：</p>
+<p>1） 超图：一条边可以连接多个顶点</p>
+<p><img src="/images/image-20221231162443509.png" srcset="/img/loading.gif" lazyload alt="image-20221231162443509"></p>
+</li>
+</ol>
+<p>​        2）超核：和k-core的定义是一样的，只不过引入到了超图汇总</p>
+<ol start="2">
+<li><p>研究思路：</p>
+<p>1） 证明了单边插入和删除只会使得超核数量增加1或减少1</p>
+<p>2） 为超边提出了核的定义，同时提出了precore的定义，但两者都是为了实际问题服务</p>
+<p>3） 提出了支持度的定义</p>
+</li>
+<li><p>定义部分:</p>
+<p>1） 顶点和边的超核数定义：</p>
+<p><img src="/images/image-20221231162926475.png" srcset="/img/loading.gif" lazyload alt="image-20221231162926475"></p>
+<p>2） pre-core定义：新插入超边的最初超核数</p>
+<p><img src="/images/image-20221231163025758.png" srcset="/img/loading.gif" lazyload alt="image-20221231163025758"></p>
+</li>
+<li><p>证明部分：</p>
+<p>1） 证明了插入超边和删除超边，只会对应使得顶点和边的超核数最多变化1</p>
+<p>2） 证明什么情况下，顶点和边的超核数会变化</p>
+<p>插入时，只有$coreV(v)=\overline{coreE}(e_0)$ 时，顶点才可能增加超核数</p>
+<p>​                只有$coreE(e)=\overline{coreE}(e_0)$时，边才可能增加超核数</p>
+<p>同时，上面的顶点和超边必须在一条通路，且这个通路的顶点和边都是超核数满足上述要求，且起点为插入边$e_0$</p>
+<p>删除时，只有$coreV(v)={coreE}(e_0)$时，顶点才可能减少超核数</p>
+<p>​                只有$coreE(e)={coreE}(e_0)$时，边才可能减少超核数</p>
+<p>同时，上面的顶点和超边必须在一条通路，且这个通路的顶点和边都是超核数满足上述要求，且起点为删 除的边$e_0$</p>
+</li>
+<li><p>引入支持度的定义：</p>
+<p>1）其定义如下：</p>
+<p>本质是计算顶点中有多少条边能满足其更改core值</p>
+<p><img src="/images/image-20221231163821567.png" srcset="/img/loading.gif" lazyload alt="image-20221231163821567"></p>
+<p>2）根据sup的定义来剪枝</p>
+<p>只有满足下面条件的顶点才能有core值的变化</p>
+<p><img src="/images/image-20221231163923474.png" srcset="/img/loading.gif" lazyload alt="image-20221231163923474"></p>
+</li>
+<li><p>整体算法：</p>
+<p><img src="/images/image-20221231164014778.png" srcset="/img/loading.gif" lazyload alt="image-20221231164014778"></p>
+<p><img src="/images/image-20221231164029161.png" srcset="/img/loading.gif" lazyload alt="image-20221231164029161"></p>
+<p>由于在超核维护前应该还有一个静态算法，来在O(m)的时间复杂度内计算出原始图的超核数量：</p>
+<p>本质是peel算法，但是多了一个超边的超核数</p>
+<p><img src="/images/image-20221231164112483.png" srcset="/img/loading.gif" lazyload alt="image-20221231164112483"></p>
+<p>时间复杂度：</p>
+<p><img src="/images/image-20221231164155657.png" srcset="/img/loading.gif" lazyload alt="image-20221231164155657"></p>
+</li>
+<li><p>实验部分：</p>
+<p>1）数据集和表现：</p>
+<p>分为正常数据集和时序数据集</p>
+<p>超图的构造和常规图是不同的，因为其超边需要连接多个顶点</p>
+<p><img src="/images/image-20221231164235955.png" srcset="/img/loading.gif" lazyload alt="image-20221231164235955"></p>
+</li>
+</ol>
+<p>ppt整理：</p>
 
 
 	<div class="row">
-    <embed src="/pdf/20221207.pdf" width="100%" height="550" type="application/pdf">
+    <embed src="/pdf/1.pdf" width="100%" height="550" type="application/pdf">
 	</div>
 
 
@@ -308,12 +370,15 @@
 
 
 
-<p>最后是补充一下原论文：</p>
+<p>原论文：</p>
 
 
 	<div class="row">
-    <embed src="/pdf/Exploring_Truss_Maintenance_in_Fully_Dynamic_Graphs_A_Mixed_Structure-Based_Approach.pdf" width="100%" height="550" type="application/pdf">
+    <embed src="/pdf/2021-Hypercore" width="100%" height="550" type="application/pdf">
 	</div>
+
+
+
 
 
 
@@ -340,8 +405,15 @@
   
     <span>></span>
     
-  <a href="/categories/%E5%8A%A8%E6%80%81%E5%9B%BE%E7%BB%B4%E6%8A%A4/k-truss%E7%BB%B4%E6%8A%A4/" class="category-chain-item">k-truss维护</a>
+  <a href="/categories/%E5%8A%A8%E6%80%81%E5%9B%BE%E7%BB%B4%E6%8A%A4/k-core/" class="category-chain-item">k-core</a>
   
+  
+    <span>></span>
+    
+  <a href="/categories/%E5%8A%A8%E6%80%81%E5%9B%BE%E7%BB%B4%E6%8A%A4/k-core/%E8%B6%85%E5%9B%BE%E7%BB%B4%E6%8A%A4/" class="category-chain-item">超图维护</a>
+  
+  
+
   
 
   
@@ -357,7 +429,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/k-truss/">#k-truss</a>
+        <a href="/tags/k-core/">#k-core</a>
+      
+        <a href="/tags/%E8%B6%85%E5%9B%BE/">#超图</a>
+      
+        <a href="/tags/%E5%8A%A8%E6%80%81%E5%9B%BE%E7%BB%B4%E6%8A%A4/">#动态图维护</a>
       
     </div>
   
@@ -369,8 +445,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>2022-Exploring Truss Maintenance in Fully Dynamic Graphs:A Mixed Structure Based Approach</div>
-      <div>http://example.com/2022/12/31/2022-Exploring-Truss-Maintenance-in-Fully-Dynamic-Graphs-A-Mixed-Structure-Based-Approach/</div>
+      <div>2021-hypercore Maintenance in Dynamic Hypergraphs</div>
+      <div>http://example.com/2022/12/31/2021-hypercore-Maintenance-in-Dynamic-Hypergraphs/</div>
     </div>
     <div class="license-meta">
       
@@ -414,18 +490,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/12/31/2021-hypercore-Maintenance-in-Dynamic-Hypergraphs/" title="2021-hypercore Maintenance in Dynamic Hypergraphs">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">2021-hypercore Maintenance in Dynamic Hypergraphs</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/12/30/2019-Enumerating-k-Vertex-Connected-Components-in-Large-Graphs/" title="2019-Enumerating k-Vertex Connected Components in Large Graphs">
-                        <span class="hidden-mobile">2019-Enumerating k-Vertex Connected Components in Large Graphs</span>
+                      <a href="/2022/12/31/2022-Exploring-Truss-Maintenance-in-Fully-Dynamic-Graphs-A-Mixed-Structure-Based-Approach/" title="2022-Exploring Truss Maintenance in Fully Dynamic Graphs:A Mixed Structure Based Approach">
+                        <span class="hidden-mobile">2022-Exploring Truss Maintenance in Fully Dynamic Graphs:A Mixed Structure Based Approach</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
