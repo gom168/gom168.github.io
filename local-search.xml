@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>2022-Exploring Truss Maintenance in Fully Dynamic Graphs:A Mixed Structure Based Approach</title>
+    <link href="/2022/12/31/2022-Exploring-Truss-Maintenance-in-Fully-Dynamic-Graphs-A-Mixed-Structure-Based-Approach/"/>
+    <url>/2022/12/31/2022-Exploring-Truss-Maintenance-in-Fully-Dynamic-Graphs-A-Mixed-Structure-Based-Approach/</url>
+    
+    <content type="html"><![CDATA[<p>研究问题：动态图中的k-truss维护</p><p>研究方法：</p><p>1） 其考虑了同时插入一个混合结构的情况，也就是可以支持多边插入和删除</p><p>2） 首先研究的是如何构建这个混合结构</p><p>3） 其次是对于这样的混合结构的插入和删除，如何进行有效的维护</p><div class="row">    <embed src="/pdf/20221207.pdf" width="100%" height="550" type="application/pdf"></div><div class="row">    <embed src="/pdf/Exploring_Truss_Maintenance_in_Fully_Dynamic_Graphs_A_Mixed_Structure-Based_Approach.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>动态图维护</category>
+      
+      <category>k-truss维护</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>k-truss</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2019-Enumerating k-Vertex Connected Components in Large Graphs</title>
     <link href="/2022/12/30/2019-Enumerating-k-Vertex-Connected-Components-in-Large-Graphs/"/>
     <url>/2022/12/30/2019-Enumerating-k-Vertex-Connected-Components-in-Large-Graphs/</url>

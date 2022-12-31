@@ -16,36 +16,22 @@
   <meta name="author" content="gx7">
   <meta name="keywords" content="">
   
-    <meta name="description" content="这篇论文是围绕k-VCC的求解 一、Abstract部分： 1）研究问题：给定k，求出图中的所有K-VCC 2）k-VCC特性：高耦合、高鲁棒性、子图重叠性 3） 方法：  ① 证明了分割问题的上界——可以用多项式时间来进行解决问题 ② 提出了两个优化策略：neighbor sweep 和 group sweep  4）结果： ​    在大型数据集上证明了方法的高效">
+    <meta name="description" content="研究问题：动态图中的k-truss维护 研究方法： 1） 其考虑了同时插入一个混合结构的情况，也就是可以支持多边插入和删除 2） 首先研究的是如何构建这个混合结构 3） 其次是对于这样的混合结构的插入和删除，如何进行有效的维护">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2019-Enumerating k-Vertex Connected Components in Large Graphs">
-<meta property="og:url" content="http://example.com/2022/12/30/2019-Enumerating-k-Vertex-Connected-Components-in-Large-Graphs/index.html">
+<meta property="og:title" content="2022-Exploring Truss Maintenance in Fully Dynamic Graphs:A Mixed Structure Based Approach">
+<meta property="og:url" content="http://example.com/2022/12/31/2022-Exploring-Truss-Maintenance-in-Fully-Dynamic-Graphs-A-Mixed-Structure-Based-Approach/index.html">
 <meta property="og:site_name" content="拐小七">
-<meta property="og:description" content="这篇论文是围绕k-VCC的求解 一、Abstract部分： 1）研究问题：给定k，求出图中的所有K-VCC 2）k-VCC特性：高耦合、高鲁棒性、子图重叠性 3） 方法：  ① 证明了分割问题的上界——可以用多项式时间来进行解决问题 ② 提出了两个优化策略：neighbor sweep 和 group sweep  4）结果： ​    在大型数据集上证明了方法的高效">
+<meta property="og:description" content="研究问题：动态图中的k-truss维护 研究方法： 1） 其考虑了同时插入一个混合结构的情况，也就是可以支持多边插入和删除 2） 首先研究的是如何构建这个混合结构 3） 其次是对于这样的混合结构的插入和删除，如何进行有效的维护">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/images/image-20221230191332813.png">
-<meta property="og:image" content="http://example.com/images/image-20221230194735795.png">
-<meta property="og:image" content="http://example.com/images/image-20221230194755050.png">
-<meta property="og:image" content="http://example.com/images/image-20221230194007930.png">
-<meta property="og:image" content="c:/Users/Lenovo/AppData/Roaming/Typora/typora-user-images/image-20221230192156538.png">
-<meta property="og:image" content="http://example.com/images/image-20221230194918361.png">
-<meta property="og:image" content="http://example.com/images/image-20221230195504193.png">
-<meta property="og:image" content="http://example.com/imagesimage-20221231154307216.png">
-<meta property="og:image" content="http://example.com/images/image-20221231154236084.png">
-<meta property="og:image" content="http://example.com/images/image-20221231154516085.png">
-<meta property="og:image" content="http://example.com/images/image-20221231154819629.png">
-<meta property="og:image" content="http://example.com/images/image-20221231155050998.png">
-<meta property="og:image" content="http://example.com/images/image-20221231155106047.png">
-<meta property="article:published_time" content="2022-12-30T10:55:12.000Z">
-<meta property="article:modified_time" content="2022-12-31T07:51:32.733Z">
+<meta property="article:published_time" content="2022-12-31T07:58:48.000Z">
+<meta property="article:modified_time" content="2022-12-31T08:03:31.178Z">
 <meta property="article:author" content="gx7">
-<meta property="article:tag" content="k-VCC">
+<meta property="article:tag" content="k-truss">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/images/image-20221230191332813.png">
   
   
   
-  <title>2019-Enumerating k-Vertex Connected Components in Large Graphs - 拐小七</title>
+  <title>2022-Exploring Truss Maintenance in Fully Dynamic Graphs:A Mixed Structure Based Approach - 拐小七</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -228,7 +214,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="2019-Enumerating k-Vertex Connected Components in Large Graphs"></span>
+            <span id="subtitle" data-typed-text="2022-Exploring Truss Maintenance in Fully Dynamic Graphs:A Mixed Structure Based Approach"></span>
           
         </div>
 
@@ -239,8 +225,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-12-30 18:55" pubdate>
-          2022年12月30日 晚上
+        <time datetime="2022-12-31 15:58" pubdate>
+          2022年12月31日 下午
         </time>
       </span>
     
@@ -251,7 +237,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.6k 字
+          106 字
         
       </span>
     
@@ -262,7 +248,7 @@
         
         
         
-          14 分钟
+          1 分钟
         
       </span>
     
@@ -300,123 +286,33 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">2019-Enumerating k-Vertex Connected Components in Large Graphs</h1>
+            <h1 style="display: none">2022-Exploring Truss Maintenance in Fully Dynamic Graphs:A Mixed Structure Based Approach</h1>
             
             
               <div class="markdown-body">
                 
-                
+                <p>研究问题：动态图中的k-truss维护</p>
+<p>研究方法：</p>
+<p>1） 其考虑了同时插入一个混合结构的情况，也就是可以支持多边插入和删除</p>
+<p>2） 首先研究的是如何构建这个混合结构</p>
+<p>3） 其次是对于这样的混合结构的插入和删除，如何进行有效的维护</p>
+
 
 	<div class="row">
-    <embed src="/pdf/Enumerating" width="100%" height="550" type="application/pdf">
+    <embed src="/pdf/20221207.pdf" width="100%" height="550" type="application/pdf">
 	</div>
 
 
 
 
-<p>这篇论文是围绕k-VCC的求解</p>
-<p>一、Abstract部分：</p>
-<p>1）研究问题：给定k，求出图中的所有K-VCC</p>
-<p>2）k-VCC特性：高耦合、高鲁棒性、子图重叠性</p>
-<p>3） 方法： </p>
-<p>① 证明了分割问题的上界——可以用多项式时间来进行解决问题</p>
-<p>② 提出了两个优化策略：neighbor sweep 和 group sweep </p>
-<p>4）结果：</p>
-<p>​    在大型数据集上证明了方法的高效性</p>
-<p>​    有数量级的提升</p>
-<p>二、Introduction部分：</p>
-<ol>
-<li><p>k-VCC特性：</p>
-<p>1） G的顶点连通性不大于边连通性和最小度</p>
-<p>2） 直径较小</p>
-<p>3） 子图的重叠性不超过n/2，其中n为顶点数</p>
-</li>
-<li><p>问题和现有方法：</p>
-<p>1） 给定G和指定的k，求出所有的k-VCC</p>
-<p>2） 现有方法：</p>
-<p>递归的找到一个顶点小于k的顶点切割，并对图进行分区</p>
-<p>一个顶点对的最小割是他们之间顶点独立路径的数量</p>
-</li>
-<li><p>本文方法：</p>
-<p>1） 证明了k-VCC的数量不超过n/2 —— 因此可以用多项式时间来完成算法</p>
-<p>2） Neighbor Sweep: 对一些顶点进行属性划分；一旦其被测试或swept，则对其所有邻居sweep；为顶点存一个值，结束测试为其周围邻居增加值，超过阈值则sweep掉</p>
-<p>3） Group Sweep：将顶点划分为不相交的组，以组为单位进行上面的测试</p>
-</li>
-<li><p>贡献：</p>
-<p>（1）一个多项式时间的算法</p>
-<p>（2）两个有效的剪枝策略</p>
-<p>（3）在实际问题的有效性</p>
-</li>
-</ol>
-<p>三、前置知识</p>
-<ol>
-<li><p>定义1 ： 顶点连通性k(G): 为移除最小数量的顶点导致原图不相连或成为平凡图</p>
-</li>
-<li><p>定义2： k-vertex-connected: (1) |V(G)|&gt;k (2) 删除任意k-1个顶点后原图仍连通</p>
-</li>
-<li><p>定义3： k-vertex-connected-component </p>
-<p>(1) g是k-vertex-connected （2） g is maximal</p>
-</li>
-</ol>
-<p>四、分割的基础框架</p>
-<ol>
-<li><p>将原图分为t个连通块</p>
-</li>
-<li><p>对每个连通块都用GLOBAL-CUT来找点割集：</p>
-<p>1）若点割集为空，则连通块本身就是一个VCC</p>
-<p>2） 否则的话，kVCC将原图根据点割集分开，并将每一个分割后的子连通块再次递归调用KVCC-ENUM</p>
-</li>
-</ol>
-<p><img src="/images/image-20221230191332813.png" srcset="/img/loading.gif" lazyload alt="image-20221230191332813"></p>
-<p>五、Basic Solution</p>
-<ol>
-<li><p>顶点割集计算：</p>
-<p>Globla-cut的目的是计算出一个少于k个顶点的点割集</p>
-<p>1） 先做一个sparse certification 的优化：将G提取其只有O(k.n)条边的k-vertex-connected连通的子图</p>
-<p>2） 下面则分割根据u是否属于S(割集)进行分类讨论：</p>
-<p>4-6行为不属于的情况，7-10 为属于的情况</p>
-<p><img src="/images/image-20221230194735795.png" srcset="/img/loading.gif" lazyload alt="image-20221230194735795"></p>
-<p><img src="/images/image-20221230194755050.png" srcset="/img/loading.gif" lazyload alt="image-20221230194755050"></p>
-<p>具体需要结合上面的两个引理来进行理解，而LOC-Cut将原有的点拆点成为n+2m条边，2n个点的图，然后求u到v的最大流，即为其local connectivity</p>
-<p><img src="/images/image-20221230194007930.png" srcset="/img/loading.gif" lazyload alt="image-20221230194007930"></p>
-</li>
-</ol>
-<p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20221230192156538.png" srcset="/img/loading.gif" lazyload alt="image-20221230192156538"></p>
-<p>​        3） 整体时间度分析比较复杂：<img src="/images/image-20221230194918361.png" srcset="/img/loading.gif" lazyload alt="image-20221230194918361"></p>
-<p>六、搜索剪枝</p>
-<p>A. neighbor Sweep</p>
-<ol>
-<li>side-vertex: u不属于一个所含顶点小于k的割集S</li>
-<li>side-vertex u是可以传导k-vetex连通性的，进而减少了局部测试</li>
-</ol>
-<p><img src="/images/image-20221230195504193.png" srcset="/img/loading.gif" lazyload alt="image-20221230195504193"></p>
-<p>​    而其具体的求法则根据上面的定理得到</p>
-<ol start="3">
-<li><p>因为满足上面条件的为 strong-side-vertex，而这些点是可以传递k-vertex-connectivity，因此可以进行剪枝</p>
-</li>
-<li><p>其还可以利用Vertex Deposit进行维护</p>
-<p>1） 若v可以和u的k个邻居都有k-vertex-connected，u和v也是k-vertex-connected的</p>
-<p>2） 因此为每个顶点存一个deposit(v)，表示其邻居节点中满足1）的条件个数的点</p>
-</li>
-</ol>
-<p>B. Group Sweep</p>
-<ol>
-<li><p>首先是如何构造一个side-group</p>
-<p>side-group定义如下：</p>
-<p><img src="/imagesimage-20221231154307216.png" srcset="/img/loading.gif" lazyload alt="image-20221231154307216"></p>
-<p><img src="/images/image-20221231154236084.png" srcset="/img/loading.gif" lazyload alt="image-20221231154236084"></p>
-</li>
-<li><p>group sweep rule:</p>
-<p>side-group 可以有以下的作用：</p>
-<p>换句话就是group内一个side-vertex完成了测试，整个gorup的k-vertex-connected 性质就相同了</p>
-<p><img src="/images/image-20221231154516085.png" srcset="/img/loading.gif" lazyload alt="image-20221231154516085"></p>
-</li>
-</ol>
-<p>​        更一般的方法是，测试group里面是否有k个点均符合条件，并用deposit记录：</p>
-<p>​    <img src="/images/image-20221231154819629.png" srcset="/img/loading.gif" lazyload alt="image-20221231154819629"></p>
-<p>整体算法：</p>
-<p><img src="/images/image-20221231155050998.png" srcset="/img/loading.gif" lazyload alt="image-20221231155050998"></p>
-<p><img src="/images/image-20221231155106047.png" srcset="/img/loading.gif" lazyload alt="image-20221231155106047"></p>
+
+
+	<div class="row">
+    <embed src="/pdf/Exploring_Truss_Maintenance_in_Fully_Dynamic_Graphs_A_Mixed_Structure-Based_Approach.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
 
                 
               </div>
@@ -435,12 +331,12 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E5%9B%BE%E8%AE%BA/" class="category-chain-item">图论</a>
+  <a href="/categories/%E5%8A%A8%E6%80%81%E5%9B%BE%E7%BB%B4%E6%8A%A4/" class="category-chain-item">动态图维护</a>
   
   
     <span>></span>
     
-  <a href="/categories/%E5%9B%BE%E8%AE%BA/k-VCC/" class="category-chain-item">k-VCC</a>
+  <a href="/categories/%E5%8A%A8%E6%80%81%E5%9B%BE%E7%BB%B4%E6%8A%A4/k-truss%E7%BB%B4%E6%8A%A4/" class="category-chain-item">k-truss维护</a>
   
   
 
@@ -457,7 +353,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/k-VCC/">#k-VCC</a>
+        <a href="/tags/k-truss/">#k-truss</a>
       
     </div>
   
@@ -469,8 +365,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>2019-Enumerating k-Vertex Connected Components in Large Graphs</div>
-      <div>http://example.com/2022/12/30/2019-Enumerating-k-Vertex-Connected-Components-in-Large-Graphs/</div>
+      <div>2022-Exploring Truss Maintenance in Fully Dynamic Graphs:A Mixed Structure Based Approach</div>
+      <div>http://example.com/2022/12/31/2022-Exploring-Truss-Maintenance-in-Fully-Dynamic-Graphs-A-Mixed-Structure-Based-Approach/</div>
     </div>
     <div class="license-meta">
       
@@ -482,7 +378,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年12月30日</div>
+          <div>2022年12月31日</div>
         </div>
       
       
@@ -514,18 +410,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/12/31/2022-Exploring-Truss-Maintenance-in-Fully-Dynamic-Graphs-A-Mixed-Structure-Based-Approach/" title="2022-Exploring Truss Maintenance in Fully Dynamic Graphs:A Mixed Structure Based Approach">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">2022-Exploring Truss Maintenance in Fully Dynamic Graphs:A Mixed Structure Based Approach</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/12/30/2018-Cohesive-Subgraph-Computation-over-Large-Sparse-Graphs/" title="2018-Cohesive Subgraph Computation over Large Sparse Graphs">
-                        <span class="hidden-mobile">2018-Cohesive Subgraph Computation over Large Sparse Graphs</span>
+                      <a href="/2022/12/30/2019-Enumerating-k-Vertex-Connected-Components-in-Large-Graphs/" title="2019-Enumerating k-Vertex Connected Components in Large Graphs">
+                        <span class="hidden-mobile">2019-Enumerating k-Vertex Connected Components in Large Graphs</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
