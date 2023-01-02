@@ -4,6 +4,37 @@
   
   
   <entry>
+    <title>2012-VLDB-Dense Subgraph Maintenance under Streaming Edge Weight Updates for Real-time Story Identification</title>
+    <link href="/2023/01/02/2012-VLDB-Dense-Subgraph-Maintenance-under-Streaming-Edge-Weight-Updates-for-Real-time-Story-Identification/"/>
+    <url>/2023/01/02/2012-VLDB-Dense-Subgraph-Maintenance-under-Streaming-Edge-Weight-Updates-for-Real-time-Story-Identification/</url>
+    
+    <content type="html"><![CDATA[<p>原论文放在最后了</p><p>PPT部分：</p><div class="row">    <embed src="/pdf/20221107.pdf" width="100%" height="550" type="application/pdf"></div><p>研究问题： 最密子图的动态维护，这个动态表示的是一个流式的边权更新情况</p><p>实际问题： 文章将这个问题与现实中的实时故事识别匹配在一起了</p><p>原论文部分：</p><div class="row">    <embed src="/pdf/Dense_Subgraph_Maintenance_under_Streaming_Edge.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>动态图维护</category>
+      
+      <category>最密子图维护</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>最密子图维护</tag>
+      
+      <tag>流式更新</tag>
+      
+      <tag>图密度维护</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2021-hypercore Maintenance in Dynamic Hypergraphs</title>
     <link href="/2022/12/31/2021-hypercore-Maintenance-in-Dynamic-Hypergraphs/"/>
     <url>/2022/12/31/2021-hypercore-Maintenance-in-Dynamic-Hypergraphs/</url>
