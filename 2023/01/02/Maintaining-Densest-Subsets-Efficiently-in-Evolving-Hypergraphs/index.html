@@ -16,22 +16,21 @@
   <meta name="author" content="gx7">
   <meta name="keywords" content="">
   
-    <meta name="description" content="研究问题：动态图中的k-truss维护 研究方法： 1） 其考虑了同时插入一个混合结构的情况，也就是可以支持多边插入和删除 2） 首先研究的是如何构建这个混合结构 3） 其次是对于这样的混合结构的插入和删除，如何进行有效的维护 下面是ppt讲解部分：   	      	       最后是补充一下原论文：">
+    <meta name="description" content="研究问题：超图下的密度子图提取及其动态维护 1） 静态超图的准确算法： ①类比于普通图，用网络流建图即可 ②用线性规划求解 2）静态超图的近似算法： ①r-近似算法 直接剥离权重最小的点即可 ②$r(1+\epsilon)$ 近似算法 剥离的是一个集合，为后续任务服务 3） 动态超图只能近似维护 ① 只维护插入 ② 插入和删除一起维护 这里只维护插入会比删除要简单的多，因此会分开讨论 下面是ppt">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2022-Exploring Truss Maintenance in Fully Dynamic Graphs:A Mixed Structure Based Approach">
-<meta property="og:url" content="http://example.com/2022/12/31/2022-Exploring-Truss-Maintenance-in-Fully-Dynamic-Graphs-A-Mixed-Structure-Based-Approach/index.html">
+<meta property="og:title" content="2017-Maintaining Densest Subsets Efficiently in Evolving Hypergraphs">
+<meta property="og:url" content="http://example.com/2023/01/02/Maintaining-Densest-Subsets-Efficiently-in-Evolving-Hypergraphs/index.html">
 <meta property="og:site_name" content="拐小七">
-<meta property="og:description" content="研究问题：动态图中的k-truss维护 研究方法： 1） 其考虑了同时插入一个混合结构的情况，也就是可以支持多边插入和删除 2） 首先研究的是如何构建这个混合结构 3） 其次是对于这样的混合结构的插入和删除，如何进行有效的维护 下面是ppt讲解部分：   	      	       最后是补充一下原论文：">
+<meta property="og:description" content="研究问题：超图下的密度子图提取及其动态维护 1） 静态超图的准确算法： ①类比于普通图，用网络流建图即可 ②用线性规划求解 2）静态超图的近似算法： ①r-近似算法 直接剥离权重最小的点即可 ②$r(1+\epsilon)$ 近似算法 剥离的是一个集合，为后续任务服务 3） 动态超图只能近似维护 ① 只维护插入 ② 插入和删除一起维护 这里只维护插入会比删除要简单的多，因此会分开讨论 下面是ppt">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-12-31T07:58:48.000Z">
-<meta property="article:modified_time" content="2023-01-02T08:47:04.258Z">
+<meta property="article:published_time" content="2023-01-02T08:45:13.000Z">
+<meta property="article:modified_time" content="2023-01-02T08:57:59.686Z">
 <meta property="article:author" content="gx7">
-<meta property="article:tag" content="k-truss">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>2022-Exploring Truss Maintenance in Fully Dynamic Graphs:A Mixed Structure Based Approach - 拐小七</title>
+  <title>2017-Maintaining Densest Subsets Efficiently in Evolving Hypergraphs - 拐小七</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -214,7 +213,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="2022-Exploring Truss Maintenance in Fully Dynamic Graphs:A Mixed Structure Based Approach"></span>
+            <span id="subtitle" data-typed-text="2017-Maintaining Densest Subsets Efficiently in Evolving Hypergraphs"></span>
           
         </div>
 
@@ -225,8 +224,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-12-31 15:58" pubdate>
-          2022年12月31日 下午
+        <time datetime="2023-01-02 16:45" pubdate>
+          2023年1月2日 下午
         </time>
       </span>
     
@@ -237,7 +236,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          128 字
+          198 字
         
       </span>
     
@@ -286,21 +285,27 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">2022-Exploring Truss Maintenance in Fully Dynamic Graphs:A Mixed Structure Based Approach</h1>
+            <h1 style="display: none">2017-Maintaining Densest Subsets Efficiently in Evolving Hypergraphs</h1>
             
             
               <div class="markdown-body">
                 
-                <p>研究问题：动态图中的k-truss维护</p>
-<p>研究方法：</p>
-<p>1） 其考虑了同时插入一个混合结构的情况，也就是可以支持多边插入和删除</p>
-<p>2） 首先研究的是如何构建这个混合结构</p>
-<p>3） 其次是对于这样的混合结构的插入和删除，如何进行有效的维护</p>
+                <p>研究问题：超图下的密度子图提取及其动态维护</p>
+<p>1） 静态超图的准确算法：</p>
+<p>①类比于普通图，用网络流建图即可</p>
+<p>②用线性规划求解</p>
+<p>2）静态超图的近似算法：</p>
+<p>①r-近似算法 直接剥离权重最小的点即可</p>
+<p>②$r(1+\epsilon)$ 近似算法 剥离的是一个集合，为后续任务服务</p>
+<p>3） 动态超图只能近似维护</p>
+<p>① 只维护插入</p>
+<p>② 插入和删除一起维护</p>
+<p>这里只维护插入会比删除要简单的多，因此会分开讨论</p>
 <p>下面是ppt讲解部分：</p>
 
 
 	<div class="row">
-    <embed src="/pdf/20221107.pdf" width="100%" height="550" type="application/pdf">
+    <embed src="/pdf/20221114.pdf" width="100%" height="550" type="application/pdf">
 	</div>
 
 
@@ -312,7 +317,7 @@
 
 
 	<div class="row">
-    <embed src="/pdf/Exploring_Truss_Maintenance_in_Fully_Dynamic_Graphs_A_Mixed_Structure-Based_Approach.pdf" width="100%" height="550" type="application/pdf">
+    <embed src="/pdf/2017-11-Maintaining_Densest_Subsets_Efficiently_in_Evolving.pdf" width="100%" height="550" type="application/pdf">
 	</div>
 
 
@@ -325,41 +330,6 @@
             <div>
               <div class="post-metas my-3">
   
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E5%8A%A8%E6%80%81%E5%9B%BE%E7%BB%B4%E6%8A%A4/" class="category-chain-item">动态图维护</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/%E5%8A%A8%E6%80%81%E5%9B%BE%E7%BB%B4%E6%8A%A4/k-truss%E7%BB%B4%E6%8A%A4/" class="category-chain-item">k-truss维护</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
-  
-  
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/k-truss/">#k-truss</a>
-      
-    </div>
   
 </div>
 
@@ -369,8 +339,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>2022-Exploring Truss Maintenance in Fully Dynamic Graphs:A Mixed Structure Based Approach</div>
-      <div>http://example.com/2022/12/31/2022-Exploring-Truss-Maintenance-in-Fully-Dynamic-Graphs-A-Mixed-Structure-Based-Approach/</div>
+      <div>2017-Maintaining Densest Subsets Efficiently in Evolving Hypergraphs</div>
+      <div>http://example.com/2023/01/02/Maintaining-Densest-Subsets-Efficiently-in-Evolving-Hypergraphs/</div>
     </div>
     <div class="license-meta">
       
@@ -382,7 +352,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年12月31日</div>
+          <div>2023年1月2日</div>
         </div>
       
       
@@ -414,18 +384,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/12/31/2021-hypercore-Maintenance-in-Dynamic-Hypergraphs/" title="2021-hypercore Maintenance in Dynamic Hypergraphs">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">2021-hypercore Maintenance in Dynamic Hypergraphs</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/12/30/2019-Enumerating-k-Vertex-Connected-Components-in-Large-Graphs/" title="2019-Enumerating k-Vertex Connected Components in Large Graphs">
-                        <span class="hidden-mobile">2019-Enumerating k-Vertex Connected Components in Large Graphs</span>
+                      <a href="/2023/01/02/2012-VLDB-Dense-Subgraph-Maintenance-under-Streaming-Edge-Weight-Updates-for-Real-time-Story-Identification/" title="2012-VLDB-Dense Subgraph Maintenance under Streaming Edge Weight Updates for Real-time Story Identification">
+                        <span class="hidden-mobile">2012-VLDB-Dense Subgraph Maintenance under Streaming Edge Weight Updates for Real-time Story Identification</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

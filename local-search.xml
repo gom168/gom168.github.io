@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>2017-Maintaining Densest Subsets Efficiently in Evolving Hypergraphs</title>
+    <link href="/2023/01/02/Maintaining-Densest-Subsets-Efficiently-in-Evolving-Hypergraphs/"/>
+    <url>/2023/01/02/Maintaining-Densest-Subsets-Efficiently-in-Evolving-Hypergraphs/</url>
+    
+    <content type="html"><![CDATA[<p>研究问题：超图下的密度子图提取及其动态维护</p><p>1） 静态超图的准确算法：</p><p>①类比于普通图，用网络流建图即可</p><p>②用线性规划求解</p><p>2）静态超图的近似算法：</p><p>①r-近似算法 直接剥离权重最小的点即可</p><p>②$r(1+\epsilon)$ 近似算法 剥离的是一个集合，为后续任务服务</p><p>3） 动态超图只能近似维护</p><p>① 只维护插入</p><p>② 插入和删除一起维护</p><p>这里只维护插入会比删除要简单的多，因此会分开讨论</p><p>下面是ppt讲解部分：</p><div class="row">    <embed src="/pdf/20221114.pdf" width="100%" height="550" type="application/pdf"></div><p>最后是补充一下原论文：</p><div class="row">    <embed src="/pdf/2017-11-Maintaining_Densest_Subsets_Efficiently_in_Evolving.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2012-VLDB-Dense Subgraph Maintenance under Streaming Edge Weight Updates for Real-time Story Identification</title>
     <link href="/2023/01/02/2012-VLDB-Dense-Subgraph-Maintenance-under-Streaming-Edge-Weight-Updates-for-Real-time-Story-Identification/"/>
     <url>/2023/01/02/2012-VLDB-Dense-Subgraph-Maintenance-under-Streaming-Edge-Weight-Updates-for-Real-time-Story-Identification/</url>
@@ -72,7 +85,7 @@
     <link href="/2022/12/31/2022-Exploring-Truss-Maintenance-in-Fully-Dynamic-Graphs-A-Mixed-Structure-Based-Approach/"/>
     <url>/2022/12/31/2022-Exploring-Truss-Maintenance-in-Fully-Dynamic-Graphs-A-Mixed-Structure-Based-Approach/</url>
     
-    <content type="html"><![CDATA[<p>研究问题：动态图中的k-truss维护</p><p>研究方法：</p><p>1） 其考虑了同时插入一个混合结构的情况，也就是可以支持多边插入和删除</p><p>2） 首先研究的是如何构建这个混合结构</p><p>3） 其次是对于这样的混合结构的插入和删除，如何进行有效的维护</p><p>下面是ppt讲解部分：</p><div class="row">    <embed src="/pdf/20221207.pdf" width="100%" height="550" type="application/pdf"></div><p>最后是补充一下原论文：</p><div class="row">    <embed src="/pdf/Exploring_Truss_Maintenance_in_Fully_Dynamic_Graphs_A_Mixed_Structure-Based_Approach.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    <content type="html"><![CDATA[<p>研究问题：动态图中的k-truss维护</p><p>研究方法：</p><p>1） 其考虑了同时插入一个混合结构的情况，也就是可以支持多边插入和删除</p><p>2） 首先研究的是如何构建这个混合结构</p><p>3） 其次是对于这样的混合结构的插入和删除，如何进行有效的维护</p><p>下面是ppt讲解部分：</p><div class="row">    <embed src="/pdf/20221107.pdf" width="100%" height="550" type="application/pdf"></div><p>最后是补充一下原论文：</p><div class="row">    <embed src="/pdf/Exploring_Truss_Maintenance_in_Fully_Dynamic_Graphs_A_Mixed_Structure-Based_Approach.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
     
     
     <categories>
