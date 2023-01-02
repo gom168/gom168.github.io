@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>2022-Efficient_Shortest_Path_Counting_on_Large_Road_Networks</title>
+    <link href="/2023/01/02/2022-Efficient-Shortest-Path-Counting-on-Large-Road-Networks/"/>
+    <url>/2023/01/02/2022-Efficient-Shortest-Path-Counting-on-Large-Road-Networks/</url>
+    
+    <content type="html"><![CDATA[<p>研究问题：在大型路径网络中快速处理两个顶点间最短路径数的询问</p><p>研究方法：</p><p>主要是引入了一个新型的数据结构，实现对应的Tree Decomposition</p><p>同时利用TL-index，快速处理查询问题</p><p>下面是ppt讲解部分：</p><div class="row">    <embed src="/pdf/20221029.pdf" width="100%" height="550" type="application/pdf"></div><p>最后是补充一下原论文：</p><div class="row">    <embed src="/pdf/2022-9-VLDB-Efficient_Shortest_Path_Counting_on_Large_Road_Networks.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>常规图问题</category>
+      
+      <category>最短路计数</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>最短路径数</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2017-Maintaining Densest Subsets Efficiently in Evolving Hypergraphs</title>
     <link href="/2023/01/02/Maintaining-Densest-Subsets-Efficiently-in-Evolving-Hypergraphs/"/>
     <url>/2023/01/02/Maintaining-Densest-Subsets-Efficiently-in-Evolving-Hypergraphs/</url>
@@ -11,6 +38,24 @@
     <content type="html"><![CDATA[<p>研究问题：超图下的密度子图提取及其动态维护</p><p>1） 静态超图的准确算法：</p><p>①类比于普通图，用网络流建图即可</p><p>②用线性规划求解</p><p>2）静态超图的近似算法：</p><p>①r-近似算法 直接剥离权重最小的点即可</p><p>②$r(1+\epsilon)$ 近似算法 剥离的是一个集合，为后续任务服务</p><p>3） 动态超图只能近似维护</p><p>① 只维护插入</p><p>② 插入和删除一起维护</p><p>这里只维护插入会比删除要简单的多，因此会分开讨论</p><p>下面是ppt讲解部分：</p><div class="row">    <embed src="/pdf/20221114.pdf" width="100%" height="550" type="application/pdf"></div><p>最后是补充一下原论文：</p><div class="row">    <embed src="/pdf/2017-11-Maintaining_Densest_Subsets_Efficiently_in_Evolving.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
     
     
+    <categories>
+      
+      <category>动态图维护</category>
+      
+      <category>密度维护</category>
+      
+      <category>超图问题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>超图</tag>
+      
+      <tag>动态维护</tag>
+      
+    </tags>
     
   </entry>
   
